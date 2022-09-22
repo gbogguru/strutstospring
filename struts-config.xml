@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="testForm" type="com.test.TestForm"/>       
+    </form-beans>
+    
+    <!-- Global Forwards -->    
+    <global-forwards>
+    </global-forwards>
+    
+    <!-- Action Mappings -->
+    <action-mappings>
+
+        <action path="/loginUser" 
+                type="com.test.LoginAction" 
+                name="loginForm" 
+                scope="request">
+                <forward name="success" path="/login.jsp"/>
+        </action>
+        <action path="/dashboardPage" 
+                type="com.test.DashboardAction" 
+                name="dashboardForm" 
+                scope="request">
+                <forward name="success" path="/dashboard.jsp"/>
+        </action>
+        <action path="/logoutPage" 
+                type="com.test.LogoutAction" 
+                name="logoutForm" 
+                scope="request">
+                <forward name="logout" path="/logout.jsp"/>
+        </action>
+        
+
+    </action-mappings>
+    <controller locale="true"/>
+</struts-config>
